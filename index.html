@@ -39,7 +39,11 @@
   .reveal.in{opacity:1;transform:none;}
   @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;}}
 
-  header{padding:28px 0;}
+  header{
+    padding:20px 0;position:sticky;top:0;z-index:10;
+    background:rgba(251,251,250,0.88);backdrop-filter:blur(6px);
+    border-bottom:1px solid transparent;
+  }
   .header-row{display:flex;justify-content:space-between;align-items:center;}
   .wordmark{font-family:'Fraunces',serif;font-weight:600;font-size:18px;}
   .nav{display:flex;gap:26px;font-size:13.5px;color:var(--ink-dim);}
@@ -55,10 +59,15 @@
   }
   .eyebrow::before{content:'';width:16px;height:1px;background:var(--green-deep);}
   h1.name{
-    font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,7vw,58px);
-    line-height:1.05;margin:0 0 18px;letter-spacing:-0.01em;
+    font-family:'Fraunces',serif;font-weight:600;font-size:clamp(40px,8vw,64px);
+    line-height:1;margin:0 0 10px;letter-spacing:-0.015em;
   }
-  .lede{font-size:18px;color:var(--ink-dim);max-width:560px;margin:0 0 32px;}
+  .tagline{
+    font-family:'Fraunces',serif;font-weight:500;font-style:italic;
+    font-size:clamp(19px,2.4vw,23px);color:var(--green-deep);
+    margin:0 0 22px;line-height:1.3;
+  }
+  .lede{font-size:17px;color:var(--ink-dim);max-width:560px;margin:0 0 32px;}
   .lede b{color:var(--ink);font-weight:600;}
   .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
   .btn{
@@ -155,7 +164,8 @@
 
   <section class="hero" style="border-top:none;padding-top:20px;">
     <div class="eyebrow reveal">Backend Engineer · Java / Spring Boot</div>
-    <h1 class="name reveal">Systems that hold up<br>under real traffic.</h1>
+    <h1 class="name reveal">Kunal Kumar</h1>
+    <p class="tagline reveal">Systems that hold up under real traffic.</p>
     <p class="lede reveal">I'm a Computer Science student at ABES Engineering College, building <b>production-style backend systems</b> — microservices, secured APIs, and the infrastructure that connects them. Currently shipping Shopre, a five-service e-commerce platform.</p>
     <div class="hero-actions reveal">
       <a class="btn primary" href="mailto:4002kunal88@gmail.com">Email me</a>
@@ -299,13 +309,13 @@
     <div class="reveal">
       <h2 class="contact-title">Let's talk.</h2>
       <p class="contact-text">Open to backend, full-stack, and SDET roles — internship or full-time. I reply quickly.</p>
+      <p class="contact-text">Best way to reach me is LinkedIn or email — happy to connect there for anything else too.</p>
       <div class="contact-rows">
         <a class="contact-row" href="mailto:4002kunal88@gmail.com"><span>4002kunal88@gmail.com</span><span class="k">EMAIL</span></a>
-        <a class="contact-row" href="tel:+918459474141"><span>+91 8459474141</span><span class="k">PHONE</span></a>
         <a class="contact-row" href="https://github.com/kunalkumar2142" target="_blank" rel="noopener"><span>kunalkumar2142</span><span class="k">GITHUB</span></a>
         <a class="contact-row" href="https://linkedin.com/in/java-developer-kunal-kumar" target="_blank" rel="noopener"><span>java-developer-kunal-kumar</span><span class="k">LINKEDIN</span></a>
       </div>
-      <div class="foot-note">Ghaziabad, Uttar Pradesh, India — kunalkumar2142.github.io</div>
+      <div class="foot-note">Ghaziabad, Uttar Pradesh, India </div>
     </div>
   </footer>
 
