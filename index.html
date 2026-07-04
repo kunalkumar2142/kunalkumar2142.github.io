@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunal Kumar — Backend Engineer</title>
+<meta name="description" content="Kunal Kumar — Java / Spring Boot backend developer. Selected work, background, and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfbfa;
+    --paper:#ffffff;
+    --ink:#15171a;
+    --ink-dim:#5a5f66;
+    --ink-faint:#9a9ea4;
+    --line:#e7e6e2;
+    --green:#5f8f4e;
+    --green-deep:#3f6636;
+    --green-tint:#eef3ec;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16.5px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:'Fraunces',serif;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;}
+  ::selection{background:var(--green-tint);color:var(--green-deep);}
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  /* reveal-on-scroll */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+  header{padding:28px 0;}
+  .header-row{display:flex;justify-content:space-between;align-items:center;}
+  .wordmark{font-family:'Fraunces',serif;font-weight:600;font-size:18px;}
+  .nav{display:flex;gap:26px;font-size:13.5px;color:var(--ink-dim);}
+  .nav a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:color .15s,border-color .15s;}
+  .nav a:hover{color:var(--green-deep);border-color:var(--green-deep);}
+
+  /* HERO */
+  .hero{padding:64px 0 56px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--green-deep);
+    letter-spacing:0.8px;text-transform:uppercase;margin-bottom:18px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .eyebrow::before{content:'';width:16px;height:1px;background:var(--green-deep);}
+  h1.name{
+    font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,7vw,58px);
+    line-height:1.05;margin:0 0 18px;letter-spacing:-0.01em;
+  }
+  .lede{font-size:18px;color:var(--ink-dim);max-width:560px;margin:0 0 32px;}
+  .lede b{color:var(--ink);font-weight:600;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    font-size:14px;font-weight:500;padding:11px 20px;border-radius:2px;
+    text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn.primary{background:var(--ink);color:#fff;}
+  .btn.primary:hover{background:var(--green-deep);}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink);}
+  .btn.ghost:hover{border-color:var(--green-deep);color:var(--green-deep);}
+
+  /* section scaffolding */
+  section{padding:56px 0;border-top:1px solid var(--line);}
+  .section-eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-faint);
+    letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;
+  }
+  h2.section-title{font-family:'Fraunces',serif;font-weight:600;font-size:28px;margin:0 0 36px;}
+
+  /* PROJECTS as case-study blocks with pull-metric */
+  .case{margin-bottom:52px;}
+  .case:last-child{margin-bottom:0;}
+  .case-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+  .case-name{font-family:'Fraunces',serif;font-weight:600;font-size:22px;}
+  .case-date{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);}
+  .case-stack{font-size:13px;color:var(--green-deep);font-family:'IBM Plex Mono',monospace;margin-bottom:20px;}
+  .case-body{display:grid;grid-template-columns:1fr;gap:24px;}
+  .case-metric{
+    background:var(--green-tint);border-left:2px solid var(--green);
+    padding:18px 22px;border-radius:2px;
+  }
+  .case-metric .big{font-family:'Fraunces',serif;font-size:32px;font-weight:600;color:var(--green-deep);line-height:1;}
+  .case-metric .small{font-size:13px;color:var(--ink-dim);margin-top:6px;}
+  .case-desc ul{margin:0;padding-left:18px;color:var(--ink-dim);font-size:15px;}
+  .case-desc li{margin-bottom:8px;}
+  .case-link{
+    display:inline-block;margin-top:16px;font-size:13.5px;text-decoration:none;
+    border-bottom:1px solid var(--ink); padding-bottom:1px;
+  }
+  .case-link:hover{color:var(--green-deep);border-color:var(--green-deep);}
+
+  @media (min-width:600px){
+    .case-body{grid-template-columns:180px 1fr;}
+  }
+
+  /* SKILLS as quiet inline tags grouped */
+  .skill-row{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline;flex-wrap:wrap;}
+  .skill-row:last-child{border-bottom:none;}
+  .skill-cat{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);width:110px;flex-shrink:0;text-transform:uppercase;letter-spacing:0.5px;}
+  .skill-items{color:var(--ink-dim);font-size:14.5px;flex:1;}
+
+  /* BACKGROUND timeline, quiet */
+  .bg-item{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);}
+  .bg-item:last-child{border-bottom:none;}
+  .bg-date{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);width:90px;flex-shrink:0;padding-top:2px;}
+  .bg-name{font-weight:600;font-size:15px;}
+  .bg-sub{font-size:13.5px;color:var(--ink-dim);margin-top:3px;}
+
+  /* FOOTER / CONTACT */
+  footer{padding:56px 0 70px;}
+  .contact-title{font-family:'Fraunces',serif;font-size:26px;font-weight:600;margin:0 0 14px;}
+  .contact-text{color:var(--ink-dim);font-size:15px;max-width:480px;margin-bottom:26px;}
+  .contact-rows{display:flex;flex-direction:column;gap:2px;}
+  .contact-row{
+    display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid var(--line);
+    text-decoration:none;color:var(--ink);font-size:15px;transition:color .15s;
+  }
+  .contact-row:last-child{border-bottom:1px solid var(--line);}
+  .contact-row:hover{color:var(--green-deep);}
+  .contact-row .k{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);align-self:center;}
+  .foot-note{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-faint);margin-top:30px;}
+
+  @media (max-width:560px){
+    .hero{padding:44px 0 40px;}
+    section{padding:40px 0;}
+  }
+  a:focus-visible, button:focus-visible{outline:2px solid var(--green-deep);outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="header-row">
+    <div class="wordmark">Kunal Kumar</div>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" style="border-top:none;padding-top:20px;">
+    <div class="eyebrow reveal">Backend Engineer · Java / Spring Boot</div>
+    <h1 class="name reveal">Systems that hold up<br>under real traffic.</h1>
+    <p class="lede reveal">I'm a Computer Science student at ABES Engineering College, building <b>production-style backend systems</b> — microservices, secured APIs, and the infrastructure that connects them. Currently shipping Shopre, a five-service e-commerce platform.</p>
+    <div class="hero-actions reveal">
+      <a class="btn primary" href="mailto:4002kunal88@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://github.com/kunalkumar2142" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn ghost" href="https://linkedin.com/in/java-developer-kunal-kumar" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="section-eyebrow reveal">Selected work</div>
+    <h2 class="section-title reveal">Two systems, built to production standards.</h2>
+
+    <div class="case reveal">
+      <div class="case-head">
+        <span class="case-name">Shopre</span>
+        <span class="case-date">Nov 2025</span>
+      </div>
+      <div class="case-stack">Java · Spring Boot · PostgreSQL · Docker · JWT</div>
+      <div class="case-body">
+        <div class="case-metric">
+          <div class="big">35%</div>
+          <div class="small">cut in inter-service latency, via optimized API routing through Spring Cloud Gateway</div>
+        </div>
+        <div class="case-desc">
+          <ul>
+            <li>Architected a microservices platform with Spring Cloud Gateway and Eureka Service Registry, orchestrating 5+ Dockerized services.</li>
+            <li>Built 15+ RESTful APIs across product, cart, and order modules for end-to-end customer transactions.</li>
+            <li>Secured every endpoint with JWT authentication, Spring Security, and role-based access control.</li>
+            <li>Shipped a React + TypeScript frontend with ShadCN UI — 40% more reusable components, 20% faster load.</li>
+          </ul>
+          <a class="case-link" href="https://github.com/kunalkumar2142" target="_blank" rel="noopener">View repository →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-head">
+        <span class="case-name">doMess</span>
+        <span class="case-date">Mar 2026</span>
+      </div>
+      <div class="case-stack">Spring Boot · WebSocket · Thymeleaf · JUnit</div>
+      <div class="case-body">
+        <div class="case-metric">
+          <div class="big">5+</div>
+          <div class="small">RESTful endpoints, tested with JUnit across controller and service layers</div>
+        </div>
+        <div class="case-desc">
+          <ul>
+            <li>Built a real-time messaging app with Spring Boot and WebSocket for instant bidirectional communication.</li>
+            <li>Structured the app in a clean Controller–Service–Repository architecture for long-term maintainability.</li>
+            <li>Rendered dynamic, live-updating UI server-side with Thymeleaf.</li>
+            <li>Covered WebSocket handlers, controllers, and services with unit and integration tests.</li>
+          </ul>
+          <a class="case-link" href="https://github.com/kunalkumar2142" target="_blank" rel="noopener">View repository →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-eyebrow reveal">Stack</div>
+    <h2 class="section-title reveal">What I build with.</h2>
+    <div class="reveal">
+      <div class="skill-row">
+        <span class="skill-cat">Languages</span>
+        <span class="skill-items">Java, Python, SQL, JavaScript</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Backend</span>
+        <span class="skill-items">Spring Boot, Spring MVC, Hibernate, REST APIs, Microservices</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Frontend</span>
+        <span class="skill-items">React, HTML, CSS, JavaScript, Bootstrap</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Tooling</span>
+        <span class="skill-items">Docker, Git, Maven, Postman, IntelliJ IDEA</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Testing</span>
+        <span class="skill-items">JUnit, Postman API testing</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Foundations</span>
+        <span class="skill-items">Data Structures &amp; Algorithms, OOP, DBMS</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="background">
+    <div class="section-eyebrow reveal">Background</div>
+    <h2 class="section-title reveal">Education, certifications, and competitive programming.</h2>
+    <div class="reveal">
+      <div class="bg-item">
+        <span class="bg-date">2023–27</span>
+        <div>
+          <div class="bg-name">B.Tech, Computer Science Engineering</div>
+          <div class="bg-sub">ABES Engineering College (AKTU) · CGPA 7.49/10 · Ghaziabad, Uttar Pradesh</div>
+        </div>
+      </div>
+      <div class="bg-item">
+        <span class="bg-date">2025</span>
+        <div>
+          <div class="bg-name">Oracle Cloud Infrastructure Generative AI Professional</div>
+          <div class="bg-sub">OCI Generative AI services and LLM fundamentals · valid till Aug 2027</div>
+        </div>
+      </div>
+      <div class="bg-item">
+        <span class="bg-date">—</span>
+        <div>
+          <div class="bg-name">Software Engineering Job Simulation, JPMorgan Chase &amp; Co. (Forage)</div>
+          <div class="bg-sub">Project setup, H2 database integration, REST API development</div>
+        </div>
+      </div>
+      <div class="bg-item">
+        <span class="bg-date">Mar–Apr '26</span>
+        <div>
+          <div class="bg-name">Python Essentials 1 &amp; 2</div>
+          <div class="bg-sub">Cisco Networking Academy</div>
+        </div>
+      </div>
+      <div class="bg-item">
+        <span class="bg-date">—</span>
+        <div>
+          <div class="bg-name">Finalist, Code Clash — IIT Jodhpur</div>
+          <div class="bg-sub">Qualified for finals among top competitors for strong problem-solving</div>
+        </div>
+      </div>
+      <div class="bg-item">
+        <span class="bg-date">ongoing</span>
+        <div>
+          <div class="bg-name">500+ DSA problems solved</div>
+          <div class="bg-sub">Across LeetCode, CodeChef, HackerRank, and GeeksforGeeks</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="reveal">
+      <h2 class="contact-title">Let's talk.</h2>
+      <p class="contact-text">Open to backend, full-stack, and SDET roles — internship or full-time. I reply quickly.</p>
+      <div class="contact-rows">
+        <a class="contact-row" href="mailto:4002kunal88@gmail.com"><span>4002kunal88@gmail.com</span><span class="k">EMAIL</span></a>
+        <a class="contact-row" href="tel:+918459474141"><span>+91 8459474141</span><span class="k">PHONE</span></a>
+        <a class="contact-row" href="https://github.com/kunalkumar2142" target="_blank" rel="noopener"><span>kunalkumar2142</span><span class="k">GITHUB</span></a>
+        <a class="contact-row" href="https://linkedin.com/in/java-developer-kunal-kumar" target="_blank" rel="noopener"><span>java-developer-kunal-kumar</span><span class="k">LINKEDIN</span></a>
+      </div>
+      <div class="foot-note">Ghaziabad, Uttar Pradesh, India — kunalkumar2142.github.io</div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  els.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
