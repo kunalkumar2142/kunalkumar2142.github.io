@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kunal Kumar — Full Stack Engineer</title>
+<title>Kunal Kumar — Backend Engineer</title>
 <meta name="description" content="Kunal Kumar — Java / Spring Boot backend developer. Selected work, background, and contact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -166,7 +166,7 @@
     <div class="eyebrow reveal">Backend Engineer · Java / Spring Boot</div>
     <h1 class="name reveal">Kunal Kumar</h1>
     <p class="tagline reveal">Systems that hold up under real traffic.</p>
-    <p class="lede reveal">I'm a Final Year Computer Science student at ABES Engineering College, building <b>production-style backend systems</b> — microservices, secured APIs, and the infrastructure that connects them.</p>
+    <p class="lede reveal">I'm a Computer Science student at ABES Engineering College, building <b>production-style backend systems</b> — microservices, secured APIs, and the infrastructure that connects them.</p>
     <div class="hero-actions reveal">
       <a class="btn primary" href="mailto:4002kunal88@gmail.com">Email me</a>
       <a class="btn ghost" href="https://github.com/kunalkumar2142" target="_blank" rel="noopener">GitHub ↗</a>
@@ -176,25 +176,25 @@
 
   <section id="work">
     <div class="section-eyebrow reveal">Selected work</div>
-    <h2 class="section-title reveal">Two systems, built to production standards.</h2>
+    <h2 class="section-title reveal">Systems built to production standards.</h2>
 
     <div class="case reveal">
       <div class="case-head">
         <span class="case-name">Shopre</span>
         <span class="case-date">Nov 2025</span>
       </div>
-      <div class="case-stack">Java · Spring Boot · PostgreSQL · Docker · JWT</div>
+      <div class="case-stack">Java · Spring Boot · Spring Cloud · PostgreSQL · Docker · JWT</div>
       <div class="case-body">
         <div class="case-metric">
-          <div class="big">35%</div>
-          <div class="small">cut in inter-service latency, via optimized API routing through Spring Cloud Gateway</div>
+          <div class="big">5</div>
+          <div class="small">Dockerized microservices, orchestrated with Spring Cloud Gateway and centralized routing</div>
         </div>
         <div class="case-desc">
           <ul>
-            <li>Architected a microservices platform with Spring Cloud Gateway and Eureka Service Registry, orchestrating 5+ Dockerized services.</li>
-            <li>Built 15+ RESTful APIs across product, cart, and order modules for end-to-end customer transactions.</li>
-            <li>Secured every endpoint with JWT authentication, Spring Security, and role-based access control.</li>
-            <li>Shipped a React + TypeScript frontend with ShadCN UI — 40% more reusable components, 20% faster load.</li>
+            <li>Architected a microservices e-commerce platform with Spring Cloud Gateway and Netflix Eureka Service Registry, with centralized routing and client-side load balancing.</li>
+            <li>Built 8+ RESTful APIs across product, authentication, and cart modules, using OpenFeign for service-to-service communication over service discovery.</li>
+            <li>Implemented JWT authentication with Spring Security and RBAC, centralizing token validation at the API gateway and propagating verified user identity downstream.</li>
+            <li>Delivered a React + TypeScript frontend with ShadCN UI, reusable components, protected routes, and JWT-based session handling.</li>
           </ul>
           <a class="case-link" href="https://github.com/kunalkumar2142/Shopre" target="_blank" rel="noopener">View repository →</a>
         </div>
@@ -203,23 +203,23 @@
 
     <div class="case reveal">
       <div class="case-head">
-        <span class="case-name">doMess</span>
-        <span class="case-date">Mar 2026</span>
+        <span class="case-name">API Rate Limiter</span>
+        <span class="case-date">Jul 2026</span>
       </div>
-      <div class="case-stack">Spring Boot · WebSocket · Thymeleaf · JUnit</div>
+      <div class="case-stack">Java · Spring Boot · Redis · Bucket4j · MySQL</div>
       <div class="case-body">
         <div class="case-metric">
-          <div class="big">5+</div>
-          <div class="small">RESTful endpoints, tested with JUnit across controller and service layers</div>
+          <div class="big">5–100</div>
+          <div class="small">req/min per-tier limits, enforced via the token bucket algorithm (Bucket4j)</div>
         </div>
         <div class="case-desc">
           <ul>
-            <li>Built a real-time messaging app with Spring Boot and WebSocket for instant bidirectional communication.</li>
-            <li>Structured the app in a clean Controller–Service–Repository architecture for long-term maintainability.</li>
-            <li>Rendered dynamic, live-updating UI server-side with Thymeleaf.</li>
-            <li>Covered WebSocket handlers, controllers, and services with unit and integration tests.</li>
+            <li>Built a distributed API rate limiter using the token bucket algorithm, enforcing configurable per-user request limits to protect backend APIs from abuse and traffic spikes.</li>
+            <li>Stored bucket state in Redis (Redisson) so limits are enforced consistently across multiple service instances — horizontally scalable rather than tied to one server's memory.</li>
+            <li>Implemented a servlet filter (OncePerRequestFilter) that intercepts requests, identifies the caller, and returns 429 Too Many Requests when limits are exceeded — cleanly separating rate-limiting logic from business code.</li>
+            <li>Added a Redis caching layer for per-user limit configuration (stored in MySQL) with a TTL, eliminating a database lookup on every request.</li>
           </ul>
-          <a class="case-link" href="https://github.com/kunalkumar2142/doMess" target="_blank" rel="noopener">View repository →</a>
+          <a class="case-link" href="https://github.com/kunalkumar2142" target="_blank" rel="noopener">View repository →</a>
         </div>
       </div>
     </div>
@@ -231,27 +231,23 @@
     <div class="reveal">
       <div class="skill-row">
         <span class="skill-cat">Languages</span>
-        <span class="skill-items">Java, Python, SQL, JavaScript</span>
+        <span class="skill-items">Java, Python, SQL, JavaScript, TypeScript</span>
       </div>
       <div class="skill-row">
         <span class="skill-cat">Backend</span>
-        <span class="skill-items">Spring Boot, Spring MVC, Hibernate, REST APIs, Microservices</span>
+        <span class="skill-items">Spring Boot, Spring MVC, Spring Cloud, Spring Security, Hibernate, REST APIs, Microservices, JWT</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Databases</span>
+        <span class="skill-items">PostgreSQL, MySQL, Redis</span>
       </div>
       <div class="skill-row">
         <span class="skill-cat">Frontend</span>
-        <span class="skill-items">React, HTML, CSS, JavaScript, Bootstrap</span>
+        <span class="skill-items">React, ShadCN UI, HTML, CSS, JavaScript, Bootstrap</span>
       </div>
       <div class="skill-row">
         <span class="skill-cat">Tooling</span>
         <span class="skill-items">Docker, Git, Maven, Postman, IntelliJ IDEA</span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-cat">Testing</span>
-        <span class="skill-items">JUnit, Postman API testing</span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-cat">Foundations</span>
-        <span class="skill-items">Data Structures &amp; Algorithms, OOP, DBMS</span>
       </div>
     </div>
   </section>
@@ -289,6 +285,12 @@
         </div>
       </div>
       <div class="bg-item">
+        <span class="bg-date">2025</span>
+        <div>
+          <div class="bg-name">Cloud Community Days 2025</div>
+        </div>
+      </div>
+      <div class="bg-item">
         <span class="bg-date">—</span>
         <div>
           <div class="bg-name">Finalist, Code Clash — IIT Jodhpur</div>
@@ -308,14 +310,13 @@
   <footer id="contact">
     <div class="reveal">
       <h2 class="contact-title">Let's talk.</h2>
-      <p class="contact-text">Open to backend, full-stack, and SDET roles — internship or full-time. I reply quickly.</p>
-      <p class="contact-text">Best way to reach me is LinkedIn or email — happy to connect there for anything else too.</p>
+      <p class="contact-text">Open to backend, full-stack, and SDE roles — internship or full-time. I reply quickly. Best way to reach me is LinkedIn or email — happy to connect there for anything else too.</p>
       <div class="contact-rows">
         <a class="contact-row" href="mailto:4002kunal88@gmail.com"><span>4002kunal88@gmail.com</span><span class="k">EMAIL</span></a>
         <a class="contact-row" href="https://github.com/kunalkumar2142" target="_blank" rel="noopener"><span>kunalkumar2142</span><span class="k">GITHUB</span></a>
         <a class="contact-row" href="https://linkedin.com/in/java-developer-kunal-kumar" target="_blank" rel="noopener"><span>java-developer-kunal-kumar</span><span class="k">LINKEDIN</span></a>
       </div>
-      <div class="foot-note">Ghaziabad, Uttar Pradesh, India </div>
+      <div class="foot-note">Ghaziabad, Uttar Pradesh, India</div>
     </div>
   </footer>
 
